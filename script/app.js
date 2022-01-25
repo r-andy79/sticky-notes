@@ -12,6 +12,7 @@ formEl.addEventListener("submit", (e) => {
   const noteContent = e.target.elements.noteContent.value;
   console.log(noteContent);
   createNoteElement(title, noteContent);
+  formEl.reset();
 });
 
 const createNoteElement = function (title, noteContent) {
