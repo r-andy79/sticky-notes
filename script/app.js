@@ -10,18 +10,18 @@ formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   const title = e.target.elements.title.value;
   const noteContent = e.target.elements.noteContent.value;
-  console.log(title, noteContent);
+  console.log(noteContent);
   createNoteElement(title, noteContent);
 });
 
-const createNoteElement = function (title) {
-  const noteTitle = document.createElement("h1");
-  const noteContent = document.createElement("p");
+const createNoteElement = function (title, noteContent) {
+  const noteTitleEl = document.createElement("h1");
+  const noteContentEl = document.createElement("p");
   const noteEl = document.createElement("div");
   noteEl.classList.add("note");
-  noteTitle.innerText = title;
-  noteContent.innerText = noteContent;
-  noteEl.appendChild(noteTitle);
-  noteEl.appendChild(noteContent);
+  noteTitleEl.innerText = title;
+  noteContentEl.innerText = noteContent;
+  noteEl.appendChild(noteTitleEl);
+  noteEl.appendChild(noteContentEl);
   containerEl.appendChild(noteEl);
 };
